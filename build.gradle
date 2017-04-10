@@ -1,0 +1,58 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+sourceCompatibility = 1.7
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Hello World',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+apply plugin: "jacoco"
+
+jacoco {
+	toolVersion = "0.7.6.201602180812"
+	}
+
+
+jacocoTestReport {
+	group = "Reporting"
+	description = "Generate JaCoCo code coverage reports after running tests"
+	reports {
+		xml.enabled true
+		html.destination "${buildDir}/jacocoHTML"
+	}
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+    
+}
+
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:1.0.2'
+  }
+}
+
+apply plugin: 'com.github.kt3k.coveralls'
+
+coveralls {
+    sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
+}
