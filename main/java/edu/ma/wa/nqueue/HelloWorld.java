@@ -1,3 +1,4 @@
+package edu.ma.wa.nqueue;
 
 public class HelloWorld{
   
