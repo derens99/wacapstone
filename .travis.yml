@@ -7,5 +7,8 @@ android:
     - build-tools-25.0.2
     - android-25
 
+# we don't have gradlew yet.  Comented these out for now
+#script:
+#   - ./gradlew build connectedCheck
 script:
-   - ./gradlew build connectedCheck
+   - ./gradle build
