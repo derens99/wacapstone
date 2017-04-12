@@ -2,7 +2,10 @@ before_script:
  - cd TicTacToe
  - chmod +x gradlew
 
+jdk: oraclejdk8
+
 language: android
+
 android:
   components:
     - tools # to get the new `repository-11.xml`
@@ -14,6 +17,7 @@ android:
 before_install:
  
 script:
-   - ./gradlew build connectedCheck
+   - ./gradlew build
+#   - ./gradlew build connectedCheck
 #language: java
 #script: gradle test jacocoTestReport 
