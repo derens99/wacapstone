@@ -1,0 +1,7 @@
+1. loading/welcome screen(optional)
+2. game screen is shown
+3. new game
+4. play X and O take turn
+5. if someone win => win dialog states who won(OK to proceed)
+6. if game tie => tie dialog states tie(OK to proceed)
+7. quit => exit(does app need this?)
