@@ -14,8 +14,11 @@ public class AIPlayer {
 
     //Pass in difficulty
     public AIPlayer(difficulty d){
-
+        diff = d;
     }
 
+    public int getNextMove(Game g){
+
+    }
 
 }
