@@ -1,4 +1,4 @@
-#language: android
+language: android
 #android:
 #  components:
 #    - tools # to get the new `repository-11.xml`
@@ -9,5 +9,5 @@
 
 #script:
 #   - ./gradlew build connectedCheck
-language: java
+#language: java
 script: gradle test jacocoTestReport 
