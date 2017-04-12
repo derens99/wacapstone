@@ -224,4 +224,16 @@ build/
 #NDK
 obj/
 
+#Zack's Additional
+/.idea
 # End of https://www.gitignore.io/api/java,macos,windows,androidstudio
+
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
