@@ -2,7 +2,10 @@ before_script:
  - cd TicTacToe
  - chmod +x gradlew
 
+jdk: oraclejdk8
+
 language: android
+
 android:
   components:
     - tools # to get the new `repository-11.xml`
