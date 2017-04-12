@@ -1,3 +1,4 @@
+before_script: cd TicTacToe
 language: android
 android:
   components:
