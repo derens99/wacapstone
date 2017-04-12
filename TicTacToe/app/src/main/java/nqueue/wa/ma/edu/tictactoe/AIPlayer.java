@@ -21,4 +21,18 @@ public class AIPlayer {
         return 0;
     }
 
+    public List<int[]> getListOfMoves(){
+        List<int[]> moves = new List<int[]>();
+        int[][] board = g.getBoard();
+        for(i = 0; i < 3){
+            for(j = 0; j<3;j++) {
+                if (board[i][k] == null) {
+                    moves.add(new int[]{i, j});
+                }
+            }
+
+        }
+        return moves;
+    }
+
 }
