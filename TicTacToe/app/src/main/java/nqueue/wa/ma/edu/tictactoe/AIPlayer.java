@@ -18,7 +18,7 @@ public class AIPlayer {
     }
 
     public int getNextMove(Game g){
-
+        return 0;
     }
 
 }
