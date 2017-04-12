@@ -1,4 +1,7 @@
-before_script: cd TicTacToe
+before_script: 
+ - cd TicTacToe
+ - chmod +x gradlew
+
 language: android
 android:
   components:
@@ -9,7 +12,6 @@ android:
     - android-25
 
 before_install:
- - chmod +x gradlew
  
 script:
    - ./gradlew build connectedCheck
