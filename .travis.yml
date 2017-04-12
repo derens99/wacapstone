@@ -17,6 +17,7 @@ android:
 before_install:
  
 script:
-   - ./gradlew build connectedCheck
+   - ./gradlew build
+#   - ./gradlew build connectedCheck
 #language: java
 #script: gradle test jacocoTestReport 
