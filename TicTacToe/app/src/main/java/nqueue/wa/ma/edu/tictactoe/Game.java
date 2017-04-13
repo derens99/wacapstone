@@ -11,7 +11,7 @@ public class Game {
     private Player player2;     //Player 2 will either be HumanPlayer or AIPlayer
     private boolean player1turn;
 
-    public enum icons(){
+    public enum icons{
         EMPTY, X, O;
     }
 
@@ -30,21 +30,21 @@ public class Game {
 
     public boolean makeMove(Move move){
         if(player1turn){
-            board[move.getX(),move.getY()]=X;
+            board[move.getX()][move.getY()]=X;
             if(isWinner(player1)){
 
             }
         }
         else{
-            board[move.getX(),move.getY()]=O;
+            board[move.getX()][move.getY()]=O;
             if(isWinner(player2)){
 
             }
         }
-        player1turn!=player1turn;
+        player1turn=!player1turn;
     }
 
-    public Player[][] getBoard(){
+    public icons[][] getBoard(){
         return board;
     }
 
@@ -57,7 +57,7 @@ public class Game {
     public boolean checkRows(Player p){
         for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
-                if()
+                //if()
             }
         }
     }
