@@ -10,6 +10,7 @@ import java.util.List;
 public class AIPlayer {
 
     private Game game;
+    private Icon[][] board;
 
     public enum difficulty{
         EASY, MEDIUM, HARD
@@ -22,8 +23,10 @@ public class AIPlayer {
         diff = d;
     }
 
-    public int getNextMove(Game g){
-        return 0;
+    public int[] getNextMove(Game g){
+        game = g;
+        board = g.getBoard();
+        return move();
     }
 
     public List<int[]> getListOfMoves(){
@@ -44,20 +47,19 @@ public class AIPlayer {
 
 
     /** Get next best move for computer. Return int[2] of {row, col} */
-    @Override
-    int[] move() {
-        int[] result = minimax(2, //Current player); // depth, max turn
+    private int[] move() {
+        int[] result = minimax(2, false); // depth, max turn
         return new int[] {result[1], result[2]};   // row, col
     }
 
     /** Recursive minimax at level of depth for either maximizing or minimizing player.
      Return int[3] of {score, row, col}  */
-    private int[] minimax(int depth, Seed player) {
+    private int[] minimax(int depth, boolean player) {
         // Generate possible next moves in a List of int[2] of {row, col}.
-        List<int[]> nextMoves = generateMoves();
+        List<int[]> nextMoves = getListOfMoves();
 
         // mySeed is maximizing; while oppSeed is minimizing
-        int bestScore = (player == mySeed) ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+        int bestScore = (player) ? Integer.MIN_VALUE : Integer.MAX_VALUE;
         int currentScore;
         int bestRow = -1;
         int bestCol = -1;
@@ -68,16 +70,19 @@ public class AIPlayer {
         } else {
             for (int[] move : nextMoves) {
                 // Try this move for the current "player"
-                cells[move[0]][move[1]].content = player;
-                if (player == mySeed) {  // mySeed (computer) is maximizing player
-                    currentScore = minimax(depth - 1, oppSeed)[0];
+                if(player)
+                    board[move[0]][move[1]] = Icon.X;
+                else
+                    board[move[0]][move[1]] = Icon.O;
+                if (player) {  // mySeed (computer) is maximizing player
+                    currentScore = minimax(depth - 1, true)[0];
                     if (currentScore > bestScore) {
                         bestScore = currentScore;
                         bestRow = move[0];
                         bestCol = move[1];
                     }
                 } else {  // oppSeed is minimizing player
-                    currentScore = minimax(depth - 1, mySeed)[0];
+                    currentScore = minimax(depth - 1, false)[0];
                     if (currentScore < bestScore) {
                         bestScore = currentScore;
                         bestRow = move[0];
@@ -85,32 +90,14 @@ public class AIPlayer {
                     }
                 }
                 // Undo move
-                cells[move[0]][move[1]].content = Seed.EMPTY;
+                board[move[0]][move[1]] = Icon.EMPTY;
             }
         }
         return new int[] {bestScore, bestRow, bestCol};
     }
 
-    /** Find all valid next moves.
-     Return List of moves in int[2] of {row, col} or empty list if gameover */
-    private List<int[]> generateMoves() {
-        List<int[]> nextMoves = new ArrayList<int[]>(); // allocate List
 
-        // If gameover, i.e., no next move
-        if (hasWon(mySeed) || hasWon(oppSeed)) {
-            return nextMoves;   // return empty list
-        }
 
-        // Search for empty cells and add to the List
-        for (int row = 0; row < ROWS; ++row) {
-            for (int col = 0; col < COLS; ++col) {
-                if (cells[row][col].content == Seed.EMPTY) {
-                    nextMoves.add(new int[] {row, col});
-                }
-            }
-        }
-        return nextMoves;
-    }
 
     /** The heuristic evaluation function for the current board
      @Return +100, +10, +1 for EACH 3-, 2-, 1-in-a-line for computer.
@@ -138,14 +125,14 @@ public class AIPlayer {
         int score = 0;
 
         // First cell
-        if (cells[row1][col1].content == mySeed) {
+        if (board[row1][col1] == Icon.O) {
             score = 1;
-        } else if (cells[row1][col1].content == oppSeed) {
+        } else if (board[row1][col1] == Icon.X) {
             score = -1;
         }
 
         // Second cell
-        if (cells[row2][col2].content == mySeed) {
+        if (board[row2][col2] == Icon.O) {
             if (score == 1) {   // cell1 is mySeed
                 score = 10;
             } else if (score == -1) {  // cell1 is oppSeed
@@ -153,7 +140,7 @@ public class AIPlayer {
             } else {  // cell1 is empty
                 score = 1;
             }
-        } else if (cells[row2][col2].content == oppSeed) {
+        } else if (board[row2][col2] == Icon.X) {
             if (score == -1) { // cell1 is oppSeed
                 score = -10;
             } else if (score == 1) { // cell1 is mySeed
@@ -164,7 +151,7 @@ public class AIPlayer {
         }
 
         // Third cell
-        if (cells[row3][col3].content == mySeed) {
+        if (board[row3][col3] == Icon.O) {
             if (score > 0) {  // cell1 and/or cell2 is mySeed
                 score *= 10;
             } else if (score < 0) {  // cell1 and/or cell2 is oppSeed
@@ -172,7 +159,7 @@ public class AIPlayer {
             } else {  // cell1 and cell2 are empty
                 score = 1;
             }
-        } else if (cells[row3][col3].content == oppSeed) {
+        } else if (board[row3][col3] == Icon.X) {
             if (score < 0) {  // cell1 and/or cell2 is oppSeed
                 score *= 10;
             } else if (score > 1) {  // cell1 and/or cell2 is mySeed
@@ -184,27 +171,9 @@ public class AIPlayer {
         return score;
     }
 
-    private int[] winningPatterns = {
-            0b111000000, 0b000111000, 0b000000111, // rows
-            0b100100100, 0b010010010, 0b001001001, // cols
-            0b100010001, 0b001010100               // diagonals
-    };
 
-    /** Returns true if thePlayer wins */
-    private boolean hasWon(Seed thePlayer) {
-        int pattern = 0b000000000;  // 9-bit pattern for the 9 cells
-        for (int row = 0; row < ROWS; ++row) {
-            for (int col = 0; col < COLS; ++col) {
-                if (cells[row][col].content == thePlayer) {
-                    pattern |= (1 << (row * COLS + col));
-                }
-            }
-        }
-        for (int winningPattern : winningPatterns) {
-            if ((pattern & winningPattern) == winningPattern) return true;
-        }
-        return false;
-    }
-}
+
 
 }
+
+
