@@ -6,14 +6,10 @@ package nqueue.wa.ma.edu.tictactoe;
 
 public class Game {
 
-
-
     private Icon[][] board;         //Board array of symbols, all empty characters to start
     private Player playerX;         //Player 1 will always be HumanPlayer
     private Player playerO;         //Player 2 will either be HumanPlayer or AIPlayer
     private boolean playerXturn;    //True if it is playerX's turn, false if otherwise
-
-
 
     /*Default constructor
     * @param Player pX -- Human player with move set to X
@@ -50,13 +46,13 @@ public class Game {
         if(board[move[0]][move[1]]!=Icon.EMPTY)
             throw new IllegalStateException("Cannot place symbol here.");
         if(p.equals(playerX)){
-            board[move[0]][move[1]]=playerX.getSymbol();
+            board[move[0]][move[1]]=playerX.getIcon();
             if(isWinner(playerX)){
                 return true;
             }
         }
         else{
-            board[move[0]][move[1]]=playerO.getSymbol();
+            board[move[0]][move[1]]=playerO.getIcon();
             if(isWinner(playerO)){
                 return true;
             }
@@ -87,7 +83,7 @@ public class Game {
         for(int i=0;i<3;i++){
             win=true;
             for(int j=0;j<3;j++){
-                if(board[i][j]!=p.getSymbol())
+                if(board[i][j]!=p.getIcon())
                     win=false;
             }
             if(win)
@@ -104,7 +100,7 @@ public class Game {
         for(int i=0;i<3;i++){
             win=true;
             for(int j=0;j<3;j++){
-                if(board[j][i]!=p.getSymbol())
+                if(board[j][i]!=p.getIcon())
                     win=false;
             }
             if(win)
@@ -119,14 +115,14 @@ public class Game {
     public boolean checkDiagonals(Player p){
         boolean win = true;
         for(int i=0;i<3;i++){
-            if(board[2-i][i]!=p.getSymbol())
+            if(board[2-i][i]!=p.getIcon())
                 win = false;
         }
         if(win)
             return true;
         win=true;
         for(int i=0;i<3;i++){
-            if(board[i][2-i]!=p.getSymbol())
+            if(board[i][2-i]!=p.getIcon())
                 win = false;
         }
         if(win)
