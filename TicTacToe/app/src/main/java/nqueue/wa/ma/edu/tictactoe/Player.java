@@ -6,6 +6,12 @@ package nqueue.wa.ma.edu.tictactoe;
 
 public class Player {
 
-    
+    public Player(){
+
+    }
+
+    public int determinePosition(){
+        return 0;
+    }
 
 }
