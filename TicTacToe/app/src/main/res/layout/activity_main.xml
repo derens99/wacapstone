@@ -4,15 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nqueue.wa.ma.edu.tictactoe.MainActivity">
+    tools:context="nqueue.wa.ma.edu.tictactoe.MainActivity"
+    android:background="@drawable/lined"
+    >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="TIC TAC TOE"
+        android:id = "@+id/textviewtitle"
+        android:textSize = "48sp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Single-Player"
+        android:textColor="#000000"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Two-Player"
+        android:textColor="#000000"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="231dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Options"
+        android:textColor="#000000"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="294dp" />
 
 </android.support.constraint.ConstraintLayout>
