@@ -6,7 +6,7 @@ package nqueue.wa.ma.edu.tictactoe;
 
 public class Game {
 
-    private char[][] board;         //To be changed to Icons once class is created
+    private char[][] board;         //Board array of symbols, all empty characters to start
     private Player playerX;         //Player 1 will always be HumanPlayer
     private Player playerO;         //Player 2 will either be HumanPlayer or AIPlayer
     private boolean playerXturn;    //True if it is playerX's turn, false if otherwise
