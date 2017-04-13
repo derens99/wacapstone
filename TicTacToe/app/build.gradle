@@ -1,4 +1,3 @@
-//Top level build file where you can add configuration options common to all subproject/modules
 apply plugin: 'com.android.application'
 
 android {
