@@ -32,11 +32,12 @@
             app:layout_constraintVertical_bias="0.082" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/sing"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:onClick="buttonOnClick"
             android:text="Single-Player"
             android:textColor="#000000"
             android:textSize="30sp"
@@ -44,11 +45,12 @@
             tools:layout_editor_absoluteY="154dp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/twoplay"
             style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:onClick="buttonOnClick"
             android:text="Two-Player"
             android:textColor="#000000"
             android:textSize="30sp"
@@ -56,11 +58,12 @@
             tools:layout_editor_absoluteY="231dp" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/opt"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:onClick="buttonOnClick"
             android:text="Options"
             android:textColor="#000000"
             android:textSize="30sp"
