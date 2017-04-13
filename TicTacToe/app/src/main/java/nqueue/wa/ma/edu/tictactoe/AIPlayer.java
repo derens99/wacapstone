@@ -1,5 +1,6 @@
 package nqueue.wa.ma.edu.tictactoe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,6 +8,8 @@ import java.util.List;
  */
 
 public class AIPlayer {
+
+    private Game game;
 
     public enum difficulty{
         EASY, MEDIUM, HARD
@@ -24,11 +27,19 @@ public class AIPlayer {
     }
 
     public List<int[]> getListOfMoves(){
+<<<<<<< HEAD
         List<int[]> moves = new List<int[]>();
         int[][] board = g.getBoard();
         for(i = 0; i < 3;i++){
             for(j = 0; j<3;j++) {
                 if (board[i][k] == null) {
+=======
+        List<int[]> moves = new ArrayList<int[]>();
+        int[][] board = game.getBoard();
+        for(int i = 0; i < 3){
+            for(int j = 0; j<3;j++) {
+                if (board[i][j] == null) {
+>>>>>>> 3f45449bb112a721452e78375260a6544b7d0e4e
                     moves.add(new int[]{i, j});
                 }
             }
