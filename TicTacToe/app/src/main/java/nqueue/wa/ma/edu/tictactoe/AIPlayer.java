@@ -29,11 +29,10 @@ public class AIPlayer {
     public List<int[]> getListOfMoves(){
 
         List<int[]> moves = new ArrayList<int[]>();
-        int[][] board = game.getBoard();
-        for(int i = 0; i < 3){
+        char[][] board = game.getBoard();
+        for(int i = 0; i < 3;i++){
             for(int j = 0; j<3;j++) {
-                if (board[i][j] == null) {
-
+                if (board[i][j] == ' ') {
                     moves.add(new int[]{i, j});
                 }
             }
