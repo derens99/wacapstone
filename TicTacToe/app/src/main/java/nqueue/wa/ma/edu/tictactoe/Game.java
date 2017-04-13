@@ -23,25 +23,26 @@ public class Game {
         player1turn = true;
         for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
-                board[i][j]= EMPTY;
+                board[i][j]= icons.EMPTY;
             }
         }
     }
 
-    public boolean makeMove(Move move){
+    public boolean makeMove(int[] move){
         if(player1turn){
-            board[move.getX()][move.getY()]=X;
+            board[move[0]][move[1]]=icons.X;
             if(isWinner(player1)){
 
             }
         }
         else{
-            board[move.getX()][move.getY()]=O;
+            board[move[0]][move[1]]=icons.O;
             if(isWinner(player2)){
 
             }
         }
         player1turn=!player1turn;
+        return false;
     }
 
     public icons[][] getBoard(){
@@ -60,6 +61,15 @@ public class Game {
                 //if()
             }
         }
+        return false;
+    }
+
+    public boolean checkColumns(Player p){
+        return false;
+    }
+
+    public boolean checkDiagonals(Player p){
+        return false;
     }
 
 }
