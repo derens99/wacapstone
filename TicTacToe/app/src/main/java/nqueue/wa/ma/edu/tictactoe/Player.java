@@ -6,22 +6,28 @@ package nqueue.wa.ma.edu.tictactoe;
 
 public class Player {
 
-    private Icon icon;      //Either X, O, or EMPTY
+    private char symbol;      //Either X or O
 
     /*Default constructor
     *@param char s -- Either X or O, to be determined when player is created */
-    public Player(Icon i){
-        icon = i;
+    public Player(char s){
+        symbol = s;
     }
 
     /*Get the move of this player
     * @return move -- Either X or O character */
-    public Icon getIcon(){
-        return icon;
+    public char getSymbol(){
+        return symbol;
     }
 
-    public int determinePosition(){
-        return 0;
+    /*Get the move of the player's opponent
+      @return move -- Either x or o character depending on who is the opponent
+     */
+    public char getOpponentSymbol(){
+        if(symbol == 'X')
+            return 'O';
+        else
+            return 'X';
     }
 
 }
