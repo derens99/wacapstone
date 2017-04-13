@@ -9,7 +9,7 @@ public class Game {
     private Icon[][] board;         //Board array of symbols, all empty characters to start
     private Player playerX;         //Player 1 will always be HumanPlayer
     private Player playerO;         //Player 2 will either be HumanPlayer or AIPlayer
-    private boolean playerXturn;    //True if it is playerX's turn, false if otherwise
+    private Icon currentPlayer;    //True if it is playerX's turn, false if otherwise
 
     /*Default constructor
     * @param Player pX -- Human player with move set to X
@@ -18,7 +18,7 @@ public class Game {
         board = new Icon[3][];
         playerX = pX;
         playerO = pO;
-        playerXturn = true;
+        currentPlayer = Icon.X; //X goes first
         for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
                 board[i][j]= Icon.EMPTY;
@@ -31,11 +31,14 @@ public class Game {
     * @param int[] move -- 2 integer array of row and column respectively
     * @return boolean -- Determine if player won with move */
     public boolean nextPlayerMove(int[] move){
-        Player p = playerX;
-        if(!playerXturn)
+        Player p;
+        if(currentPlayer == Icon.X) {
+            p = playerX;
+        }else {
             p = playerO;
+        }
         boolean won = makeMove(move, p);
-        playerXturn = !playerXturn;
+        currentPlayer = (currentPlayer==Icon.X) ? Icon.O : Icon.X;
         return won;
     }
 
@@ -128,6 +131,10 @@ public class Game {
         if(win)
             return true;
         return false;
+    }
+
+    public boolean AIGame(){
+        return playerO instanceof AIPlayer;
     }
 
 }

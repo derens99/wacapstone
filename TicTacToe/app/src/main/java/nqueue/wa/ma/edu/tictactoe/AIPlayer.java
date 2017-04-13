@@ -7,7 +7,7 @@ import java.util.List;
  * Created by zackhillman on 4/12/17.
  */
 
-public class AIPlayer {
+public class AIPlayer extends Player{
 
     private Game game;
     private Icon[][] board;
@@ -20,6 +20,7 @@ public class AIPlayer {
 
     //Pass in difficulty
     public AIPlayer(difficulty d){
+        super(Icon.O);
         diff = d;
     }
 
