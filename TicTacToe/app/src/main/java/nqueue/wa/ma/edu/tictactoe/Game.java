@@ -6,7 +6,7 @@ package nqueue.wa.ma.edu.tictactoe;
 
 public class Game {
 
-    private char[][] board;         //Board array of symbols, all empty characters to start
+    private Icon[][] board;         //Board array of symbols, all empty characters to start
     private Player playerX;         //Player 1 will always be HumanPlayer
     private Player playerO;         //Player 2 will either be HumanPlayer or AIPlayer
     private boolean playerXturn;    //True if it is playerX's turn, false if otherwise
@@ -15,13 +15,14 @@ public class Game {
     * @param Player pX -- Human player with move set to X
     * @param Player pO -- Either human or AI with move set to O */
     public Game(Player pX,Player pO){
-        board = new char[3][3];
+        board = new Icon[3][];
         playerX = pX;
         playerO = pO;
         playerXturn = true;
         for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
-                board[i][j]= ' ';
+                board[i][j]= Icon.EMPTY;
+                System.out.println(board.toString());
             }
         }
     }
@@ -42,16 +43,16 @@ public class Game {
     * @param int[] move -- 2 integer array of row and column respectively
     * @param Player p -- Player who is taking their turn */
     public boolean makeMove(int[] move,Player p){
-        if(board[move[0]][move[1]]!=' ')
+        if(board[move[0]][move[1]]!=Icon.EMPTY)
             throw new IllegalStateException("Cannot place symbol here.");
         if(p.equals(playerX)){
-            board[move[0]][move[1]]=playerX.getSymbol();
+            board[move[0]][move[1]]=playerX.getIcon();
             if(isWinner(playerX)){
                 return true;
             }
         }
         else{
-            board[move[0]][move[1]]=playerO.getSymbol();
+            board[move[0]][move[1]]=playerO.getIcon();
             if(isWinner(playerO)){
                 return true;
             }
@@ -61,7 +62,7 @@ public class Game {
 
     /*Get the game board with positions of symbols
     * @return board -- Array of symbol characters */
-    public char[][] getBoard(){
+    public Icon[][] getBoard(){
         return board;
     }
 
@@ -82,7 +83,7 @@ public class Game {
         for(int i=0;i<3;i++){
             win=true;
             for(int j=0;j<3;j++){
-                if(board[i][j]!=p.getSymbol())
+                if(board[i][j]!=p.getIcon())
                     win=false;
             }
             if(win)
@@ -99,7 +100,7 @@ public class Game {
         for(int i=0;i<3;i++){
             win=true;
             for(int j=0;j<3;j++){
-                if(board[j][i]!=p.getSymbol())
+                if(board[j][i]!=p.getIcon())
                     win=false;
             }
             if(win)
@@ -114,14 +115,14 @@ public class Game {
     public boolean checkDiagonals(Player p){
         boolean win = true;
         for(int i=0;i<3;i++){
-            if(board[2-i][i]!=p.getSymbol())
+            if(board[2-i][i]!=p.getIcon())
                 win = false;
         }
         if(win)
             return true;
         win=true;
         for(int i=0;i<3;i++){
-            if(board[i][2-i]!=p.getSymbol())
+            if(board[i][2-i]!=p.getIcon())
                 win = false;
         }
         if(win)
