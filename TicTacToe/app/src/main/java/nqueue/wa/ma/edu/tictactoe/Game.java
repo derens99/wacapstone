@@ -1,5 +1,7 @@
 package nqueue.wa.ma.edu.tictactoe;
 
+import android.util.Log;
+
 import java.io.Serializable;
 
 /**
@@ -17,14 +19,13 @@ public class Game implements Serializable {
     * @param Player pX -- Human player with move set to X
     * @param Player pO -- Either human or AI with move set to O */
     public Game(Player pX,Player pO){
-        board = new Icon[3][];
+        board = new Icon[3][3];
         playerX = pX;
         playerO = pO;
         currentPlayer = Icon.X; //X goes first
         for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
-                board[i][j] = Icon.EMPTY ;
-         //      System.out.println(board.toString());
+                board[i][j]= Icon.EMPTY;
             }
         }
     }
