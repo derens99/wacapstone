@@ -33,9 +33,7 @@ public class board extends AppCompatActivity {
 
     public void buttonOnClick(View v){
         if((Button) v == b1){
-
             makeMove(b1,new int[]{0,0});
-
         }else if((Button) v == b2){
             makeMove(b2,new int[]{0,1});
         }else if((Button) v == b3){
@@ -53,20 +51,20 @@ public class board extends AppCompatActivity {
         }else if((Button) v == b9){
             makeMove(b9,new int[]{2,2});
         }
-
-
         TextView moveview = (TextView)findViewById(R.id.move);
         moveview.setText(game.getCurrentPlayer().toString());
-
     }
 
     private void makeMove(Button b,int[] move){
         Icon p = game.getCurrentPlayer();
-
         b.setText(p.toString());
         b.setClickable(false);
         if( game.nextPlayerMove(move)){
             displayAlert("Player " + p.toString() + " has won!");
+        }else{
+            if(game.isFull()){
+                displayAlert("Tie Game");
+            }
         }
 
     }
