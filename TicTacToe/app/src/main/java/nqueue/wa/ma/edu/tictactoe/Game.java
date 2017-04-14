@@ -1,10 +1,12 @@
 package nqueue.wa.ma.edu.tictactoe;
 
+import java.io.Serializable;
+
 /**
  * Created by drewh on 4/12/2017.
  */
 
-public class Game {
+public class Game implements Serializable {
 
     private Icon[][] board;         //Board array of symbols, all empty characters to start
     private Player playerX;         //Player 1 will always be HumanPlayer
@@ -21,8 +23,8 @@ public class Game {
         currentPlayer = Icon.X; //X goes first
         for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
-                board[i][j]= Icon.EMPTY;
-                System.out.println(board.toString());
+                board[i][j] = Icon.EMPTY ;
+         //      System.out.println(board.toString());
             }
         }
     }
@@ -37,9 +39,9 @@ public class Game {
         }else {
             p = playerO;
         }
-        boolean won = makeMove(move, p);
+    //    boolean won = makeMove(move, p);
         currentPlayer = (currentPlayer==Icon.X) ? Icon.O : Icon.X;
-        return won;
+        return true;
     }
 
     /*Make the move for Player p in the position indicated my int[] move

@@ -10,8 +10,8 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -64,6 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:layout_weight="1"
+                    android:onClick="buttonOnClick"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     tools:layout_editor_absoluteX="42dp"
@@ -74,6 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:layout_weight="1"
+                    android:onClick="buttonOnClick"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     tools:layout_editor_absoluteX="148dp"
@@ -84,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:layout_weight="1"
+                    android:onClick="buttonOnClick"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     tools:layout_editor_absoluteX="248dp"
@@ -102,6 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:layout_weight="1"
+                    android:onClick="buttonOnClick"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     tools:layout_editor_absoluteX="42dp"
@@ -112,6 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:layout_weight="1"
+                    android:onClick="buttonOnClick"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     tools:layout_editor_absoluteX="148dp"
@@ -122,6 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:layout_weight="1"
+                    android:onClick="buttonOnClick"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     tools:layout_editor_absoluteX="248dp"
@@ -141,6 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:layout_weight="1"
+                    android:onClick="buttonOnClick"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     tools:layout_editor_absoluteX="148dp"
@@ -150,17 +157,19 @@
                     android:id="@+id/seven"
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
+                    android:layout_weight="0.77"
+                    android:onClick="buttonOnClick"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     tools:layout_editor_absoluteX="42dp"
-                    tools:layout_editor_absoluteY="283dp"
-                    android:layout_weight="0.77" />
+                    tools:layout_editor_absoluteY="283dp" />
 
                 <Button
                     android:id="@+id/nine"
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:layout_weight="1"
+                    android:onClick="buttonOnClick"
                     android:textColor="#000000"
                     android:textSize="48sp"
                     tools:layout_editor_absoluteX="248dp"

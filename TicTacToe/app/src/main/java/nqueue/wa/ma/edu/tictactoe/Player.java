@@ -1,10 +1,12 @@
 package nqueue.wa.ma.edu.tictactoe;
 
+import java.io.Serializable;
+
 /**
  * Created by AzizTaha on 4/12/2017.
  */
 
-public class Player {
+public class Player implements Serializable {
 
     private Icon icon;      //Either X, O, or EMPTY
 

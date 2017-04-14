@@ -1,5 +1,6 @@
 package nqueue.wa.ma.edu.tictactoe;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by zackhillman on 4/12/17.
  */
 
-public class AIPlayer extends Player{
+public class AIPlayer extends Player implements Serializable {
 
     private Game game;
     private Icon[][] board;
