@@ -26,7 +26,7 @@ public class board extends AppCompatActivity {
 
     public void buttonOnClick(View v){
         if((Button) v == b1){
-            b1.
+            
         }else if((Button) v == b2){
 
         }else if((Button) v == b3){
