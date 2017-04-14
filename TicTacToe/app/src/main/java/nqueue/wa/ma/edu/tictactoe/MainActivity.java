@@ -20,19 +20,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonOnClick(View v){
         if((Button) v == single){
-        //    Intent myIntent = new Intent(this, board.class);
-
-      //      board b = new board(new Game(new Player(Icon.X), new AIPlayer(AIPlayer.difficulty.EASY)));
             Intent next = new Intent(MainActivity.this, board.class);
             next.putExtra("game",new Game(new Player(Icon.X), new AIPlayer(AIPlayer.difficulty.EASY)));
             startActivity(next);
         }else if((Button) v == two){
-     //       board b = new board(new Game(new Player(Icon.X), new Player(Icon.O)));
             Intent next = new Intent(MainActivity.this, board.class);
-            Player x = new Player(Icon.X);
-            Player o = new Player(Icon.O);
-            Game g = new Game(x,o);
-            next.putExtra("game",g);
+            next.putExtra("game",new Game(new Player(Icon.X),new Player(Icon.O)));
             startActivity(next);
         }else if((Button) v == option){
 

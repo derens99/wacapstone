@@ -66,10 +66,35 @@ public class board extends AppCompatActivity {
         b.setText(p.toString());
         b.setClickable(false);
         if( game.nextPlayerMove(move)){
-            displayAlert("Player " + p.toString() + "has won!");
+            displayAlert("Player " + p.toString() + " has won!");
         }
 
     }
+
+    private void buttonreset(Button b){
+        b.setText("");
+        b.setClickable(true);
+    }
+
+    private void reset(){
+        if (game.AIGame()){
+            game = new Game(new Player(Icon.X), new AIPlayer(AIPlayer.difficulty.EASY));
+        }else{
+            game = new Game(new Player(Icon.X), new Player(Icon.O));
+        }
+        TextView moveview = (TextView)findViewById(R.id.move);
+        moveview.setText(game.getCurrentPlayer().toString());
+        buttonreset(b1);
+        buttonreset(b2);
+        buttonreset(b3);
+        buttonreset(b4);
+        buttonreset(b5);
+        buttonreset(b6);
+        buttonreset(b7);
+        buttonreset(b8);
+        buttonreset(b9);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,9 +136,10 @@ public class board extends AppCompatActivity {
     private void displayAlert(String text){
         AlertDialog alertDialog = new AlertDialog.Builder(board.this).create();
         alertDialog.setMessage(text);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "New Game",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        reset();
                         dialog.dismiss();
                     }
                 });
