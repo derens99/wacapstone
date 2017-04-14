@@ -25,21 +25,25 @@ public class GameUnitTest {
         assertEquals(false, game.AIGame());
     }
 
+    @Test
     public void testFirstCurrentPlayer(){
         assertEquals(Icon.X, game.getCurrentPlayer());
     }
 
+    @Test
     public void checkInitialDiagnals(){
         assertEquals(false, game.checkDiagonals(player1));
         assertEquals(false, game.checkDiagonals(player2));
     }
 
+    @Test
     public void checkRows(){
         game.makeMove(new int[]{0,0}, player1);
         game.makeMove(new int[]{0,1}, player1);
         assertEquals(true, game.makeMove(new int[]{0,2}, player1));
     }
 
+    @Test
     public void checkColums(){
         game = new Game(player1, player2);
         game.makeMove(new int[]{0,0}, player1);
@@ -47,6 +51,7 @@ public class GameUnitTest {
         assertEquals(true, game.makeMove(new int[]{2,0}, player1));
     }
 
+    @Test
     public void checkFirstDiagonal(){
         game = new Game(player1, player2);
         game.makeMove(new int[]{0,0}, player1);
@@ -54,6 +59,7 @@ public class GameUnitTest {
         assertEquals(true, game.makeMove(new int[]{2,2}, player1));
     }
 
+    @Test
     public void checkSecondDiagonal(){
         game = new Game(player1, player2);
         game.makeMove(new int[]{0,2}, player1);
