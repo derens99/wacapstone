@@ -5,4 +5,9 @@ package nqueue.wa.ma.edu.tictactoe;
  */
 
 public class Test {
+
+    public void derensMethod(){
+        
+    }
+
 }
