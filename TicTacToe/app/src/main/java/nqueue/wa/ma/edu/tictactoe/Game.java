@@ -115,20 +115,30 @@ public class Game implements Serializable {
         return false;
     }
 
+    public boolean isFull(){
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                if(board[i][j]==Icon.EMPTY)
+                    return false;
+            }
+        }
+        return true;
+    }
+
     /*Check for three in a row of Player p's symbol by diagonals
     * @param Player p -- Player to determine if they have won or not
     * @return boolean -- True if Player p has won, false if otherwise */
     public boolean checkDiagonals(Player p){
         boolean win = true;
         for(int i=0;i<3;i++){
-            if(board[2-i][i]!=p.getIcon())
+            if(board[i][2-i]!=p.getIcon())
                 win = false;
         }
         if(win)
             return true;
         win=true;
         for(int i=0;i<3;i++){
-            if(board[i][2-i]!=p.getIcon())
+            if(board[i][i]!=p.getIcon())
                 win = false;
         }
         if(win)
