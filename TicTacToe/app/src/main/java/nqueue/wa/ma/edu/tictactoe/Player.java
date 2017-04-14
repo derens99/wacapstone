@@ -20,6 +20,16 @@ public class Player {
         return icon;
     }
 
+    /*Get the move of the ai player
+   * @return move -- Either X or O character */
+    public Icon getOpponentIcon(){
+        Icon x;
+        if(icon == Icon.X)
+            return Icon.O;
+        else
+            return Icon.X;
+    }
+
     public int determinePosition(){
         return 0;
     }
