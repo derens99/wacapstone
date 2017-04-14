@@ -32,23 +32,24 @@ public class board extends AppCompatActivity {
 
     public void buttonOnClick(View v){
         if((Button) v == b1){
-            
+            game.nextPlayerMove(new int[]{0,0});
+            b1.setText("x");
         }else if((Button) v == b2){
-
+            game.nextPlayerMove(new int[]{1,0});
         }else if((Button) v == b3){
-
+            game.nextPlayerMove(new int[]{2,0});
         }else if((Button) v == b4){
-
+            game.nextPlayerMove(new int[]{0,1});
         }else if((Button) v == b5){
-
+            game.nextPlayerMove(new int[]{1,1});
         }else if((Button) v == b6){
-
+            game.nextPlayerMove(new int[]{2,1});
         }else if((Button) v == b7){
-
+            game.nextPlayerMove(new int[]{0,2});
         }else if((Button) v == b8){
-
+            game.nextPlayerMove(new int[]{1,2});
         }else if((Button) v == b9){
-
+            game.nextPlayerMove(new int[]{2,2});
         }
     }
 
