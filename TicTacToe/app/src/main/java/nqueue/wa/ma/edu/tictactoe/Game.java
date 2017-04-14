@@ -40,9 +40,9 @@ public class Game implements Serializable {
         }else {
             p = playerO;
         }
-    //    boolean won = makeMove(move, p);
+        boolean won = makeMove(move, p);
         currentPlayer = (currentPlayer==Icon.X) ? Icon.O : Icon.X;
-        return true;
+        return won;
     }
 
     /*Make the move for Player p in the position indicated my int[] move

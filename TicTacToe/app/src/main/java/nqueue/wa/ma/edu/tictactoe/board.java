@@ -1,5 +1,7 @@
 package nqueue.wa.ma.edu.tictactoe;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -31,26 +33,42 @@ public class board extends AppCompatActivity {
 
     public void buttonOnClick(View v){
         if((Button) v == b1){
-          // Log.d("Button","button clicked");
-            game.nextPlayerMove(new int[]{0,0});
-            b1.setText("x");
+
+            makeMove(b1,new int[]{0,0});
+
         }else if((Button) v == b2){
-            game.nextPlayerMove(new int[]{0,1});
+            makeMove(b2,new int[]{0,1});
         }else if((Button) v == b3){
-            game.nextPlayerMove(new int[]{0,2});
+            makeMove(b3,new int[]{0,2});
         }else if((Button) v == b4){
-            game.nextPlayerMove(new int[]{1,0});
+            makeMove(b4,new int[]{1,0});
         }else if((Button) v == b5){
-            game.nextPlayerMove(new int[]{1,1});
+            makeMove(b5,new int[]{1,1});
         }else if((Button) v == b6){
-            game.nextPlayerMove(new int[]{1,2});
+            makeMove(b6,new int[]{1,2});
         }else if((Button) v == b7){
-            game.nextPlayerMove(new int[]{2,0});
+            makeMove(b7,new int[]{2,0});
         }else if((Button) v == b8){
-            game.nextPlayerMove(new int[]{2,1});
+            makeMove(b8,new int[]{2,1});
         }else if((Button) v == b9){
-            game.nextPlayerMove(new int[]{2,2});
+            makeMove(b9,new int[]{2,2});
         }
+
+
+        TextView moveview = (TextView)findViewById(R.id.move);
+        moveview.setText(game.getCurrentPlayer().toString());
+
+    }
+
+    private void makeMove(Button b,int[] move){
+        Icon p = game.getCurrentPlayer();
+
+        b.setText(p.toString());
+        b.setClickable(false);
+        if( game.nextPlayerMove(move)){
+            displayAlert("Player " + p.toString() + "has won!");
+        }
+
     }
 
     @Override
@@ -89,4 +107,18 @@ public class board extends AppCompatActivity {
         button8view.setTypeface(buttons);
         button9view.setTypeface(buttons);
     }
+
+    private void displayAlert(String text){
+        AlertDialog alertDialog = new AlertDialog.Builder(board.this).create();
+        alertDialog.setMessage(text);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
+    }
+
+
 }
