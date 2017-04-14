@@ -27,7 +27,7 @@ public class Game {
         }
     }
 
-    /*Takes the turn of the next players turn
+    /*Takes next player's turn
     * @param int[] move -- 2 integer array of row and column respectively
     * @return boolean -- Determine if player won with move */
     public boolean nextPlayerMove(int[] move){
@@ -135,6 +135,10 @@ public class Game {
 
     public boolean AIGame(){
         return playerO instanceof AIPlayer;
+    }
+
+    public Icon getCurrentPlayer(){
+        return currentPlayer;
     }
 
 }
