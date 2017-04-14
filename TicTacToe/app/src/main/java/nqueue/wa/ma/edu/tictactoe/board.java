@@ -11,6 +11,11 @@ import android.widget.TextView;
 public class board extends AppCompatActivity {
 
     public Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
+    public Game game;
+
+    board(Game g){
+        game = g;
+    }
 
     public void init(){
         b1 = (Button)findViewById(R.id.one);
@@ -24,9 +29,10 @@ public class board extends AppCompatActivity {
         b9 = (Button)findViewById(R.id.nine);
     }
 
+
     public void buttonOnClick(View v){
         if((Button) v == b1){
-
+            
         }else if((Button) v == b2){
 
         }else if((Button) v == b3){

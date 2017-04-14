@@ -7,159 +7,167 @@
     tools:context="nqueue.wa.ma.edu.tictactoe.board"
     android:background="@drawable/lined">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="436dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="25dp">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="25dp">
 
-            <TextView
-                android:id="@+id/turn"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TURN:"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="42dp"
-                tools:layout_editor_absoluteY="84dp" />
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
-            <TextView
-                android:id="@+id/move"
+                <TextView
+                    android:id="@+id/turn"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content"
+                    android:text="TURN"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="42dp"
+                    tools:layout_editor_absoluteY="84dp" />
+
+                <TextView
+                    android:id="@+id/move"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="X"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="88dp"
+                    tools:layout_editor_absoluteY="84dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="X"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="88dp"
-                tools:layout_editor_absoluteY="84dp" />
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="132dp">
+
+                <Button
+                    android:id="@+id/one"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="42dp"
+                    tools:layout_editor_absoluteY="139dp" />
+
+                <Button
+                    android:id="@+id/two"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="148dp"
+                    tools:layout_editor_absoluteY="139dp" />
+
+                <Button
+                    android:id="@+id/three"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="248dp"
+                    tools:layout_editor_absoluteY="139dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="42dp"
+                    tools:layout_editor_absoluteY="210dp" />
+
+                <Button
+                    android:id="@+id/five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="148dp"
+                    tools:layout_editor_absoluteY="210dp" />
+
+                <Button
+                    android:id="@+id/six"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="248dp"
+                    tools:layout_editor_absoluteY="210dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="290dp"
+                android:layout_height="132dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+                <Button
+                    android:id="@+id/eight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="148dp"
+                    tools:layout_editor_absoluteY="283dp" />
+
+                <Button
+                    android:id="@+id/seven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="42dp"
+                    tools:layout_editor_absoluteY="283dp"
+                    android:layout_weight="0.77" />
+
+                <Button
+                    android:id="@+id/nine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textSize="48sp"
+                    tools:layout_editor_absoluteX="248dp"
+                    tools:layout_editor_absoluteY="283dp" />
+            </LinearLayout>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="132dp">
-
-            <Button
-                android:id="@+id/one"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="42dp"
-                tools:layout_editor_absoluteY="139dp" />
-
-            <Button
-                android:id="@+id/two"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="148dp"
-                tools:layout_editor_absoluteY="139dp" />
-
-            <Button
-                android:id="@+id/three"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="248dp"
-                tools:layout_editor_absoluteY="139dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/four"
-                android:layout_width="wrap_content"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="42dp"
-                tools:layout_editor_absoluteY="210dp" />
-
-            <Button
-                android:id="@+id/five"
-                android:layout_width="wrap_content"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="148dp"
-                tools:layout_editor_absoluteY="210dp" />
-
-            <Button
-                android:id="@+id/six"
-                android:layout_width="wrap_content"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="248dp"
-                tools:layout_editor_absoluteY="210dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="290dp"
-            android:layout_height="132dp"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
-
-            <Button
-                android:id="@+id/eight"
-                android:layout_width="wrap_content"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="148dp"
-                tools:layout_editor_absoluteY="283dp" />
-
-            <Button
-                android:id="@+id/seven"
-                android:layout_width="wrap_content"
-                android:layout_height="90dp"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="42dp"
-                tools:layout_editor_absoluteY="283dp" />
-
-            <Button
-                android:id="@+id/nine"
-                android:layout_width="wrap_content"
-                android:layout_height="90dp"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textSize="48sp"
-                tools:layout_editor_absoluteX="248dp"
-                tools:layout_editor_absoluteY="283dp" />
-        </LinearLayout>
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

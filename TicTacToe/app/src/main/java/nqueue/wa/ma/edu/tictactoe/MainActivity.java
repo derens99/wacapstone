@@ -10,9 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public Button single;
-    public Button two;
-    public Button option;
+    public Button single, two, option;
 
     public void init(){
         single = (Button)findViewById(R.id.sing);
@@ -22,9 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonOnClick(View v){
         if((Button) v == single){
+            board b = new board(new Game(new Player(Icon.X), new AIPlayer(AIPlayer.difficulty.EASY)));
             Intent next = new Intent(MainActivity.this, board.class);
             startActivity(next);
         }else if((Button) v == two){
+            board b = new board(new Game(new Player(Icon.X), new Player(Icon.O)));
             Intent next = new Intent(MainActivity.this, board.class);
             startActivity(next);
         }else if((Button) v == option){
