@@ -19,7 +19,7 @@ public class Game implements Serializable {
     * @param Player pX -- Human player with move set to X
     * @param Player pO -- Either human or AI with move set to O */
     public Game(Player pX,Player pO){
-        board = new Icon[3][];
+        board = new Icon[3][3];
         playerX = pX;
         playerO = pO;
         currentPlayer = Icon.X; //X goes first
