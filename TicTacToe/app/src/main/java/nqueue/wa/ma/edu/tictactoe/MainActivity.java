@@ -12,12 +12,13 @@ import java.io.Serializable;
 
 public class MainActivity extends AppCompatActivity{
 
-    public Button single, two, option;
+    public Button single, two, option, about;
 
     public void init(){
         single = (Button)findViewById(R.id.sing);
         two = (Button)findViewById(R.id.twoplay);
         option = (Button)findViewById(R.id.opt);
+        about = (Button)findViewById(R.id.about);
     }
 
     public void buttonOnClick(View v){
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity{
             startActivity(next);
         }else if((Button) v == option){
 
+        }
+        else if((Button) v == about){
+            Intent next = new Intent(MainActivity.this,about.class);
+            startActivity(next);
         }
     }
 
