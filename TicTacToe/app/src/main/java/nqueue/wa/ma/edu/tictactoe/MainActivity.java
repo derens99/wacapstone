@@ -50,9 +50,11 @@ public class MainActivity extends AppCompatActivity{
         TextView buttonview = (TextView)findViewById(R.id.sing);
         TextView button2view = (TextView)findViewById(R.id.twoplay);
         TextView button3view = (TextView)findViewById(R.id.opt);
+        TextView button4view = (TextView)findViewById(R.id.about);
         titleview.setTypeface(title);
         buttonview.setTypeface(buttons);
         button2view.setTypeface(buttons);
         button3view.setTypeface(buttons);
+        button4view.setTypeface(buttons);
     }
 }

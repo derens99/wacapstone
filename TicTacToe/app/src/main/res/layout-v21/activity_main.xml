@@ -78,6 +78,17 @@
                 android:textSize="30sp"
                 tools:layout_editor_absoluteX="148dp"
                 tools:layout_editor_absoluteY="294dp" />
+
+            <Button
+                android:id="@+id/about"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:onClick="buttonOnClick"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="About" />
         </LinearLayout>
     </RelativeLayout>
 
