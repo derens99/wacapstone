@@ -48,7 +48,7 @@
                 android:layout_weight="1"
                 android:onClick="buttonOnClick"
                 android:text="Single-Player"
-                android:textColor="#000000"
+                android:textColor="#000000"git
                 android:textSize="30sp"
                 tools:layout_editor_absoluteX="129dp"
                 tools:layout_editor_absoluteY="154dp" />
