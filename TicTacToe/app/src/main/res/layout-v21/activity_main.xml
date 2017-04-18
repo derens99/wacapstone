@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nqueue.wa.ma.edu.tictactoe.MainActivity"
+    android:background="@drawable/lined"
+    >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_marginTop="94dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/textviewtitle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:text="TIC TAC TOE"
+                android:textColor="#000000"
+                android:textSize="48sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.082" />
+
+            <Button
+                android:id="@+id/sing"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:onClick="buttonOnClick"
+                android:text="Single-Player"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                tools:layout_editor_absoluteX="129dp"
+                tools:layout_editor_absoluteY="154dp" />
+
+            <Button
+                android:id="@+id/twoplay"
+                style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:onClick="buttonOnClick"
+                android:text="Two-Player"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="231dp" />
+
+            <Button
+                android:id="@+id/opt"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:onClick="buttonOnClick"
+                android:text="Options"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="294dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
