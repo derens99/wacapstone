@@ -11,7 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class board extends AppCompatActivity {
+import java.io.Serializable;
+
+public class board extends AppCompatActivity{
 
     public Button b1, b2, b3, b4, b5, b6, b7, b8, b9;
     public Game game;

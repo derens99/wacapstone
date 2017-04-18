@@ -8,14 +8,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.Serializable;
 
-    public Button single, two, option;
+public class MainActivity extends AppCompatActivity{
+
+    public Button single, two, option, about;
 
     public void init(){
         single = (Button)findViewById(R.id.sing);
         two = (Button)findViewById(R.id.twoplay);
         option = (Button)findViewById(R.id.opt);
+        about = (Button)findViewById(R.id.about);
     }
 
     public void buttonOnClick(View v){
@@ -30,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         }else if((Button) v == option){
 
         }
+        else if((Button) v == about){
+            Intent next = new Intent(MainActivity.this,about.class);
+            startActivity(next);
+        }
     }
 
     @Override
@@ -43,9 +50,11 @@ public class MainActivity extends AppCompatActivity {
         TextView buttonview = (TextView)findViewById(R.id.sing);
         TextView button2view = (TextView)findViewById(R.id.twoplay);
         TextView button3view = (TextView)findViewById(R.id.opt);
+        TextView button4view = (TextView)findViewById(R.id.about);
         titleview.setTypeface(title);
         buttonview.setTypeface(buttons);
         button2view.setTypeface(buttons);
         button3view.setTypeface(buttons);
+        button4view.setTypeface(buttons);
     }
 }
