@@ -50,8 +50,8 @@ public class board extends AppCompatActivity{
             makeMove(b7,new int[]{2,0});
         }else if((Button) v == b8){
             makeMove(b8,new int[]{2,1});
-        }else if((Button) v == b9){
-            makeMove(b9,new int[]{2,2});
+        }else if((Button) v == b9) {
+            makeMove(b9, new int[]{2, 2});
         }
         TextView moveview = (TextView)findViewById(R.id.move);
         moveview.setText(game.getCurrentPlayer().toString());

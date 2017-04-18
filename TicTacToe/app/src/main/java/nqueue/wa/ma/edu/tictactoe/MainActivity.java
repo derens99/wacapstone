@@ -1,5 +1,7 @@
 package nqueue.wa.ma.edu.tictactoe;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -22,9 +24,10 @@ public class MainActivity extends AppCompatActivity{
 
     public void buttonOnClick(View v){
         if((Button) v == single){
-            Intent next = new Intent(MainActivity.this, board.class);
-            next.putExtra("game",new Game(new Player(Icon.X), new AIPlayer(AIPlayer.difficulty.EASY)));
-            startActivity(next);
+            displayAlert("Single Player is currently under construction. \nIf we feel like it, we will fix it. \nGo away.");
+        //    Intent next = new Intent(MainActivity.this, board.class);
+        //    next.putExtra("game",new Game(new Player(Icon.X), new AIPlayer(AIPlayer.difficulty.EASY)));
+        //    startActivity(next);
         }else if((Button) v == two){
             Intent next = new Intent(MainActivity.this, board.class);
             next.putExtra("game",new Game(new Player(Icon.X),new Player(Icon.O)));
@@ -49,5 +52,11 @@ public class MainActivity extends AppCompatActivity{
         buttonview.setTypeface(buttons);
         button2view.setTypeface(buttons);
         button3view.setTypeface(buttons);
+    }
+
+    private void displayAlert(String text){
+        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        alertDialog.setMessage(text);
+        alertDialog.show();
     }
 }
